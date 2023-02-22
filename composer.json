@@ -1,0 +1,17 @@
+{
+    "name": "kavi/site-editor",
+    "description": "Local webpage editor Laravel package",
+    "keywords": ["laravel", "package"],
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Kavi\\SiteEditor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Kaviyarasu M"
+        }
+    ],
+    "require": {}
+}
