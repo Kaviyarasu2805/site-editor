@@ -13,5 +13,6 @@
             "name": "Kaviyarasu M"
         }
     ],
-    "require": {}
+    "require": {},
+    "minimum-stability": "dev"
 }
