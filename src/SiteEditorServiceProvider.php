@@ -4,6 +4,7 @@ namespace Kavi\SiteEditor;
 
 use Illuminate\Cookie\CookieJar;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class SiteEditorServiceProvider extends ServiceProvider
 {
@@ -22,7 +23,11 @@ class SiteEditorServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        include __DIR__.'/routes/editor.php';
+        $this->routes(function () {
+            Route::middleware('web')
+                ->prefix('site-editor')
+                ->group(base_path('routes/editor.php'));
+        });
 
         $this->publishes([
             __DIR__.'/config/csrf.php' => config_path('csrf.php'),
