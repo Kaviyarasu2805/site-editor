@@ -24,8 +24,7 @@ class SiteEditorServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->routes(function () {
-            Route::middleware('web')
-                ->prefix('site-editor')
+            Route::prefix('site-editor')
                 ->group(base_path('routes/editor.php'));
         });
 
