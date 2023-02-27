@@ -20,7 +20,7 @@ class SiteEditorController extends Controller
         return view('editor::siteEditor.editor', compact('business', 'bname'));
     }
 
-    public function upload(Request $request){
+    public function upload(Request $request, $business){
         $validator = Validator::make($request->all(), [
             'file' => 'required|mimes:jpg,jpeg,png,svg|max:5120',
         ]);
@@ -28,13 +28,13 @@ class SiteEditorController extends Controller
             return response()->json(['error'=>$validator->errors()->all()]);
         }
         $file = time() . '.' . $request->file->extension();
-        $request->file->move(public_path($request->input('mediaPath').'/'), $file);
+        $request->file->move(public_path($request->input('mediaPath').'/'.$business.'/'), $file);
         return $file;
     }
 
-    public function scan(Request $request)
+    public function scan(Request $request, $business)
     {
-        $mediaPath = $request->input('mediaPath', 'assets/media');
+        $mediaPath = $request->input('mediaPath', public_path('vendor/site-editor/'.$business));
 
         $response = $this->scanDirectory($mediaPath);
 
@@ -57,7 +57,7 @@ class SiteEditorController extends Controller
             $files[] = [
                 'name'  => basename($directory),
                 'type'  => 'folder',
-                'path'  => str_replace(public_path(), '', $directory),
+                'path'  => str_replace(public_path(), '/public', $directory),
                 'items' => $this->scanDirectory($directory),
             ];
         }
@@ -66,7 +66,7 @@ class SiteEditorController extends Controller
             $files[] = [
                 'name' => $file->getFilename(),
                 'type' => 'file',
-                'path' => str_replace(public_path(), '', $file->getPathname()),
+                'path' => str_replace(public_path(), '/public', $file->getPathname()),
                 'size' => $file->getSize(),
             ];
         }
@@ -82,14 +82,13 @@ class SiteEditorController extends Controller
             $file = preg_replace('@\?.*$@' , '', preg_replace('@\.{2,}@' , '', preg_replace('@[^\/\\a-zA-Z0-9\-\._]@', '', $file)));
             return $file;
         }
-
         $file = sanitizeFileName($request->input('html'));
 
         $data = array(
             'manual_editor_content' => $file
         );
         DB::table("business_content")->where('bid', $buss->id)->update($data);
-        return "File saved <b>$business</b> ;)";
+        return "File saved <a href='/$business' target='_blank'>$business</a> ;)";
     }
 
     public function business($business)

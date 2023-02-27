@@ -62,7 +62,7 @@
 			</div>
 
 			<div class="btn-group me-3 float-end" role="group">
-				<button class="btn btn-primary btn-icon" title="Export (Ctrl + E)" id="save-btn" data-vvveb-action="saveAjax" data-vvveb-url="/save/{{ $bname }}" data-v-vvveb-shortcut="ctrl+e">
+				<button class="btn btn-primary btn-icon" title="Export (Ctrl + E)" id="save-btn" data-vvveb-action="saveAjax" data-vvveb-url="/editor/save/{{ $bname }}" data-v-vvveb-shortcut="ctrl+e">
 					<i class="la la-save"></i> <span data-v-gettext>Save page</span>
 				</button>
 			</div>
@@ -1424,6 +1424,8 @@
 	<script>
 		window.mediaPath = "/vendor/kavi/site-editor/src/assets/media";
 		//Vvveb.themeBaseUrl = 'demo/landing/';
+        Vvveb.business = '{{ $bname }}';
+		Vvveb.mediaPath = '/public/vendor/site-editor/{{ $bname }}';
 	</script>
 	<script src="/vendor/kavi/site-editor/src/assets/libs/media/media.js"></script>
 	<script src="/vendor/kavi/site-editor/src/assets/libs/media/openverse.js"></script>
@@ -1474,7 +1476,7 @@
 				$(".component-properties-tab").hide();
 			}
 
-			Vvveb.Builder.init("{{ $business }}", function () {
+			Vvveb.Builder.init("/editor/business/{{ $business }}", function () {
 				//run code after page/iframe is loaded
 			});
 
