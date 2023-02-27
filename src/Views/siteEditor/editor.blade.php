@@ -8,28 +8,28 @@
 
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<link rel="icon" href="assets/img/logo.jpg" />
+	<link rel="icon" href="/vendor/kavi/site-editor/src/assets/img/logo.jpg" />
 	<base href="" />
-	<title>{{ config('app.name'). ucfirst(trans($bname)) }}</title>
+	<title>{{ config('app.name') .' '. ucfirst(trans($bname)) }}</title>
 
-	<link href="assets/css/editor.css" rel="stylesheet" />
+	<link href="/vendor/kavi/site-editor/src/assets/css/editor.css" rel="stylesheet" />
 </head>
 <body>
 	<div id="vvveb-builder">
 		<div id="top-panel">
-			<img src="assets/img/logo.png" alt="Vvveb" class="float-start" id="logo" />
+			<img src="/vendor/kavi/site-editor/src/assets/img/logo.png" alt="Vvveb" class="float-start" id="logo" />
 
 			<div class="btn-group float-start" role="group">
 				<button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
-					<img src="assets/libs/builder/icons/file-manager-layout.svg" width="20px" height="20px" />
+					<img src="/vendor/kavi/site-editor/src/assets/libs/builder/icons/file-manager-layout.svg" width="20px" height="20px" />
 				</button>
 
 				<button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
-					<img src="assets/libs/builder/icons/left-column-layout.svg" width="20px" height="20px" />
+					<img src="/vendor/kavi/site-editor/src/assets/libs/builder/icons/left-column-layout.svg" width="20px" height="20px" />
 				</button>
 
 				<button class="btn btn-light" title="Toggle right column" id="toggle-right-column-btn" data-vvveb-action="toggleRightColumn" data-bs-toggle="button" aria-pressed="false">
-					<img src="assets/libs/builder/icons/right-column-layout.svg" width="20px" height="20px" />
+					<img src="/vendor/kavi/site-editor/src/assets/libs/builder/icons/right-column-layout.svg" width="20px" height="20px" />
 				</button>
 			</div>
 
@@ -1309,7 +1309,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<p class="modal-title text-primary">
-                            <img src="assets/img/logo.png" alt="Logo" width="80px">
+                            <img src="/vendor/kavi/site-editor/src/assets/img/logo.png" alt="Logo" width="80px">
                         </p>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
 							<!-- span aria-hidden="true"><small><i class="la la-times"></i></small></span -->
@@ -1405,63 +1405,63 @@
 	</div>
 
 	<!-- jquery-->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.hotkeys.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/js/jquery.min.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/js/jquery.hotkeys.js"></script>
 
 	<!-- bootstrap-->
-	<script src="assets/js/popper.min.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/js/popper.min.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/js/bootstrap.min.js"></script>
 
 	<!-- builder code-->
-	<script src="assets/libs/builder/builder.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/builder.js"></script>
 	<!-- undo manager-->
-	<script src="assets/libs/builder/undo.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/undo.js"></script>
 	<!-- inputs-->
-	<script src="assets/libs/builder/inputs.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/inputs.js"></script>
 
 	<!-- media gallery -->
-	<link href="assets/libs/media/media.css" rel="stylesheet" />
+	<link href="/vendor/kavi/site-editor/src/assets/libs/media/media.css" rel="stylesheet" />
 	<script>
-		window.mediaPath = "assets/media";
+		window.mediaPath = "/vendor/kavi/site-editor/src/assets/media";
 		//Vvveb.themeBaseUrl = 'demo/landing/';
 	</script>
-	<script src="assets/libs/media/media.js"></script>
-	<script src="assets/libs/media/openverse.js"></script>
-	<script src="assets/libs/builder/plugin-media.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/media/media.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/media/openverse.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/plugin-media.js"></script>
 
 	<!-- components-->
-	<script src="assets/libs/builder/plugin-google-fonts.js"></script>
-	<script src="assets/libs/builder/components-common.js"></script>
-	<script src="assets/libs/builder/plugin-aos.js"></script>
-	<script src="assets/libs/builder/components-elements.js"></script>
-	<script src="assets/libs/builder/components-bootstrap5.js"></script>
-	<script src="assets/libs/builder/components-widgets.js"></script>
-	<script src="assets/libs/builder/components-html.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/plugin-google-fonts.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-common.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/plugin-aos.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-elements.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-bootstrap5.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-widgets.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-html.js"></script>
 
 	<!-- sections-->
-	<script src="assets/demo/landing/sections/sections.js"></script>
-	<script src="assets/libs/builder/sections-bootstrap4.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/demo/landing/sections/sections.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/sections-bootstrap4.js"></script>
 
 	<!-- blocks-->
-	<script src="assets/libs/builder/blocks-bootstrap4.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/blocks-bootstrap4.js"></script>
 
 	<!-- plugins -->
 
 	<!-- code mirror - code editor syntax highlight -->
-	<link href="assets/libs/codemirror/lib/codemirror.css" rel="stylesheet" />
-	<link href="assets/libs/codemirror/theme/material.css" rel="stylesheet" />
-	<script src="assets/libs/codemirror/lib/codemirror.js"></script>
-	<script src="assets/libs/codemirror/lib/xml.js"></script>
-	<script src="assets/libs/codemirror/lib/formatting.js"></script>
-	<script src="assets/libs/builder/plugin-codemirror.js"></script>
+	<link href="/vendor/kavi/site-editor/src/assets/libs/codemirror/lib/codemirror.css" rel="stylesheet" />
+	<link href="/vendor/kavi/site-editor/src/assets/libs/codemirror/theme/material.css" rel="stylesheet" />
+	<script src="/vendor/kavi/site-editor/src/assets/libs/codemirror/lib/codemirror.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/codemirror/lib/xml.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/codemirror/lib/formatting.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/plugin-codemirror.js"></script>
 
 	<!-- jszip - download page as zip -->
-	<script src="assets/libs/jszip/jszip.min.js"></script>
-	<script src="assets/libs/jszip/filesaver.min.js"></script>
-	<script src="assets/libs/builder/plugin-jszip.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/jszip/jszip.min.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/jszip/filesaver.min.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/plugin-jszip.js"></script>
 
 	<!-- autocomplete plugin used by autocomplete input-->
-	<script src="assets/libs/autocomplete/jquery.autocomplete.js"></script>
+	<script src="/vendor/kavi/site-editor/src/assets/libs/autocomplete/jquery.autocomplete.js"></script>
 
 	<script>
 		$(document).ready(function () {
@@ -1474,7 +1474,7 @@
 				$(".component-properties-tab").hide();
 			}
 
-			Vvveb.Builder.init("/business/{{ $business }}", function () {
+			Vvveb.Builder.init("{{ $business }}", function () {
 				//run code after page/iframe is loaded
 			});
 
