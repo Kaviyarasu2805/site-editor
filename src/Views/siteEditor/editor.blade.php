@@ -10,7 +10,7 @@
 	<meta name="author" content="" />
 	<link rel="icon" href="/vendor/kavi/site-editor/src/assets/img/logo.jpg" />
 	<base href="" />
-	<title>{{ config('app.name') .' '. ucfirst(trans($bname)) }}</title>
+	<title>{{ config('app.name') .' | '. ucfirst(trans($bname)) }}</title>
 
 	<link href="/vendor/kavi/site-editor/src/assets/css/editor.css" rel="stylesheet" />
 </head>
