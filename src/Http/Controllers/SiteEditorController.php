@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class SiteEditorController extends Controller
 {
-    public function editor($business){
-        // if(session()->get('bus_id')){
+    public function editor($business, Request $request){
+        if($request->session()->get('busid')){
             $bname = base64_decode($business);
             return view('editor::siteEditor.editor', compact('business', 'bname'));
-        // }
+        }
     }
 
     public function upload(Request $request){
