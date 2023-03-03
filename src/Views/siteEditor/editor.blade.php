@@ -1425,7 +1425,9 @@
 		window.mediaPath = "/vendor/kavi/site-editor/src/assets/media";
 		//Vvveb.themeBaseUrl = 'demo/landing/';
         Vvveb.business = '{{ $bname }}';
-		Vvveb.mediaPath = '/public/vendor/site-editor/{{ $bname }}';
+        Vvveb.upload = '/editor/upload/' + Vvveb.business;
+		Vvveb.mediaPath = '/public/vendor/site-editor/' + Vvveb.business;
+		Vvveb.scanPath = '/editor/public/scan/' + Vvveb.business;
 	</script>
 	<script src="/vendor/kavi/site-editor/src/assets/libs/media/media.js"></script>
 	<script src="/vendor/kavi/site-editor/src/assets/libs/media/openverse.js"></script>

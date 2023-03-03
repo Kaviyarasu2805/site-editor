@@ -6,7 +6,7 @@ use Kavi\SiteEditor\Http\Controllers\SiteEditorController;
 
 
 Route::middleware(['web', 'csrf'])->controller(SiteEditorController::class)->group(function () {
-    Route::get('{business}', [SiteEditorController::class, 'editor']);
+    Route::get('{business}', 'editor');
     Route::get('business/{business}', 'business');
     Route::post('upload/{business}', 'upload');
     Route::post('save/{business}', 'save');

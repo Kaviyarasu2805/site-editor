@@ -24,11 +24,14 @@ class SiteEditorController extends Controller
         $validator = Validator::make($request->all(), [
             'file' => 'required|mimes:jpg,jpeg,png,svg|max:5120',
         ]);
+
         if($validator->fails()){
             return response()->json(['error'=>$validator->errors()->all()]);
         }
+
         $file = time() . '.' . $request->file->extension();
-        $request->file->move(public_path($request->input('mediaPath').'/'.$business.'/'), $file);
+        $request->file->move(public_path('vendor/site-editor/').$business, $file);
+
         return $file;
     }
 

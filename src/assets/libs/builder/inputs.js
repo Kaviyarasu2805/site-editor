@@ -417,9 +417,10 @@ var ImageInput = $.extend({}, Input, {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
+
 				$.ajax({
 					type: "POST",
-					url: '/upload',//set your server side upload script url
+					url: Vvveb.upload,//set your server side upload script url
 					data: formData,
 					processData: false,
 					contentType: false,
