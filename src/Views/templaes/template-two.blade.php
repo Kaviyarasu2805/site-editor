@@ -47,7 +47,7 @@ else{
 
         $bname = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
         $BDetails = DB::table('business')->whereRaw("(bname = '$bname')")->get();
-        $ownerid = '';
+        $ownerid = $business_category = '';
         foreach($BDetails as $business){
             $ownerid = $business->userid;
             $business_category = $business->category;
