@@ -1161,11 +1161,12 @@ else{
 	<!-- Map -->
 	<?php if($results_layout->map == '1'){ ?>
 	<section class="main-contact-page-link">
-		<div class="container-fluid" style="padding: 0;">
-		    <div id="map" class="w-100 full_height" style="width:100%;height:450px"></div>
-			<!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437.740480250939!2d-97.65979718455836!3d30.500094203857515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644d1cda0695b83%3A0xaf7de1314f4bf8ce!2sEmpower%20Therapy%20Center!5e0!3m2!1sen!2sin!4v1643984546695!5m2!1sen!2sin"-->
-			<!--width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->
-		</div>
+        <div data-component-maps="" class="container-fluid" style="min-height:100vh;max-width:100%;position:relative;padding: 0;">
+            <?php
+                $mapsrc = "https://maps.google.com/maps?q=" . $bus->lat . "," . $bus->lng . "&hl=en&z=14&output=embed";
+            ?>
+            <iframe frameborder="0" src="{{ $mapsrc }}" style="width:100%;height:450px;left:0px;pointer-events:none" marginheight="0" marginwidth="0"></iframe>
+        </div>
 	</section>
 	<?php }?>
 	<!-- End Map -->

@@ -1149,8 +1149,11 @@ else{
             <div class="container-fluid">
                 <div class="row">
                     <!-- col -->
-                    <div class="col-xl-6 col-lg-6" style="padding: 0;">
-                        <div id="map" class="w-100 full_height"></div>
+                    <div data-component-maps="" class="col-xl-6 col-lg-6" style="min-height:100vh;max-width:100%;position:relative">
+                        <?php
+                            $mapsrc = "https://maps.google.com/maps?q=" . $bus->lat . "," . $bus->lng . "&hl=en&z=14&output=embed";
+                        ?>
+                        <iframe frameborder="0" src="{{ $mapsrc }}" style="width:100%;height:100vh;left:0px;pointer-events:none" marginheight="0" marginwidth="0"></iframe>
                     </div>
                     <!-- / col -->
                     <div class="col-xl-6 col-lg-6 order-lg-0" style="padding: 0 70px;display: flex;align-content: center;align-items: center;">
