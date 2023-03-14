@@ -18,7 +18,7 @@ class SiteEditorController extends Controller
         if (!$buss) {
             return redirect('login');
         }
-        return view('editor::siteEditor.editor', compact('business', 'bname'));
+        return view('editor::editor', compact('business', 'bname'));
     }
 
     public function upload(Request $request, $business)
