@@ -1478,7 +1478,7 @@
 				$(".component-properties-tab").hide();
 			}
 
-			Vvveb.Builder.init("/editor/business/{{ $business }}", function () {
+			Vvveb.Builder.init("/{{ $bname }}", function () {
 				//run code after page/iframe is loaded
 			});
 
