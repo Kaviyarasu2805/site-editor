@@ -20,9 +20,9 @@
 			<img src="/vendor/kavi/site-editor/src/assets/img/logo.png" alt="Vvveb" class="float-start" id="logo" />
 
 			<div class="btn-group float-start" role="group">
-				<button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
+				{{-- <button class="btn btn-light" title="Toggle file manager" id="toggle-file-manager-btn" data-vvveb-action="toggleFileManager" data-bs-toggle="button" aria-pressed="false">
 					<img src="/vendor/kavi/site-editor/src/assets/libs/builder/icons/file-manager-layout.svg" width="20px" height="20px" />
-				</button>
+				</button> --}}
 
 				<button class="btn btn-light" title="Toggle left column" id="toggle-left-column-btn" data-vvveb-action="toggleLeftColumn" data-bs-toggle="button" aria-pressed="false">
 					<img src="/vendor/kavi/site-editor/src/assets/libs/builder/icons/left-column-layout.svg" width="20px" height="20px" />
