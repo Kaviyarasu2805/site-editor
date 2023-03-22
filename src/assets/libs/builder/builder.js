@@ -1759,12 +1759,6 @@ Vvveb.Builder = {
 		$.ajaxSetup({
 			headers: {
 				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-				// 'Cache-Control': 'no-cache, private',
-				// 'Pragma': 'no-cache', 
-				// 'Expires': '5',
-				// 'Connection': 'Keep-Alive',
-				// 'Keep-Alive': 'timeout=5, max=100',
-				'Content-Type': 'text/html; charset=UTF-8',
 			}
 		});
 		$.ajax({
