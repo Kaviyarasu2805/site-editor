@@ -1443,7 +1443,7 @@
 	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/components-html.js"></script>
 
 	<!-- sections-->
-	<script src="/vendor/kavi/site-editor/src/assets/demo/landing/sections/sections.js"></script>
+	{{-- <script src="/vendor/kavi/site-editor/src/assets/demo/landing/sections/sections.js"></script> --}}
 	<script src="/vendor/kavi/site-editor/src/assets/libs/builder/sections-bootstrap4.js"></script>
 
 	<!-- blocks-->
