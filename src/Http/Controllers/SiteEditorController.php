@@ -95,7 +95,7 @@ class SiteEditorController extends Controller
     private function sanitizeFileName($file)
     {
         //sanitize, remove double dot .. and remove get parameters if any
-        $file = preg_replace('@\?.*$@', '', preg_replace('@\.{2,}@', '', preg_replace('@[^\/\\a-zA-Z0-9\-\._]@', '', $file)));
+        $file = preg_replace('@\?.*$@', '', preg_replace('@\.{2,}@', '', preg_replace('@[^\/\\a-zA-Z0-9{}\-\._]@', '', $file)));
         return $file;
     }
 }

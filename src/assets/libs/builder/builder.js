@@ -2181,7 +2181,7 @@ Vvveb.StyleManager = {
 			}
 		}
 
-		this.cssContainer.html(css);
+		this.cssContainer.append(css);
 	},
 
 
