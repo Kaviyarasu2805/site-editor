@@ -14,14 +14,16 @@ class SiteEditorServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->make('Kavi\SiteEditor\Http\Controllers\SiteEditorController');
-        $this->loadViewsFrom(__DIR__.'/Views', 'editor');
+        $this->loadViewsFrom(__DIR__ . '/Views', 'editor');
         $this->app['router']->aliasMiddleware('csrf', \Kavi\SiteEditor\Http\Middleware\VerifyCsrfTokenMiddleware::class);
 
         $this->publishes([
-            __DIR__.'/Http/Controllers/SiteEditorController.php' => app_path('Http/Controllers/Vendor/SiteEditorController.php'),
-            __DIR__.'/Views/siteEditor' => base_path('resources/views/vendor/siteEditor'),
-            // __DIR__.'/config/csrf.php' => config_path('csrf.php'),
+            __DIR__ . '/Views/siteEditor' => base_path('resources/views/vendor/siteEditor'),
         ]);
+
+        $this->publishes([
+            __DIR__ . '/assets' => public_path('Vendor/site-editor'),
+        ], 'public');
     }
 
     /**

@@ -13,9 +13,8 @@ class SiteEditorController extends Controller
 {
     public function editor($business, Request $request)
     {
-        $bname = base64_decode($business);
-        $buss = DB::table("business")->where('userid', $request->session()->get('busid'))->where('bname', $bname)->first();
-        if (!$buss) {
+        $bname = $business;
+        if (!auth()->user()) {
             return redirect('login');
         }
         return view('editor::editor', compact('business', 'bname'));
