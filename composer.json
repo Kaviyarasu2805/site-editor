@@ -18,6 +18,14 @@
         "illuminate/support": "^9.2.0",
         "illuminate/http": "^9.2.0"
     },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan vendor:publish --provider=Vendor\\Kavi\\SiteEditor\\ServiceProvider --tag=public --force"
+        ],
+        "post-update-cmd": [
+            "php artisan vendor:publish --provider=Vendor\\Kavi\\SiteEditor\\ServiceProvider --tag=public --force"
+        ]
+    },
     "minimum-stability": "stable",
     "prefer-stable": true
 }
