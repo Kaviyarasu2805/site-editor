@@ -20,10 +20,6 @@ class SiteEditorServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/Views/siteEditor' => base_path('resources/views/vendor/siteEditor'),
         ]);
-
-        $this->publishes([
-            __DIR__ . '/assets' => public_path('Vendor/site-editor'),
-        ], 'public');
     }
 
     /**
@@ -31,6 +27,10 @@ class SiteEditorServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        $this->publishes([
+            __DIR__ . '/assets' => public_path('Vendor/site-editor'),
+        ], 'public');
+        
         Route::prefix('editor')->group(__DIR__.'/routes/editor.php');
     }
 }
