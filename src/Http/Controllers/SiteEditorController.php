@@ -4,6 +4,7 @@ namespace Kavi\SiteEditor\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Business;
 use App\Models\SiteEditor;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -15,11 +16,7 @@ class SiteEditorController extends Controller
 {
     public function editor($business, Request $request)
     {
-        $bname = $business;
-        if (!auth()->user()) {
-            return redirect('login');
-        }
-        return view('editor::editor', compact('business', 'bname'));
+        return view('editor::editor', compact('business'));
     }
 
     public function upload(Request $request, $business)
@@ -83,8 +80,10 @@ class SiteEditorController extends Controller
     public function save(Request $request, $business)
     {
         $html = $this->sanitizeFileName($request->input('html'));
-
-        SiteEditor::updateOrCreate(
+        
+        $user = auth()->user()->business()->first();
+        
+        $user->site_editor()->updateOrCreate(
             ['user_id' => auth()->id()],
             [
                 'user_id' => auth()->id(),

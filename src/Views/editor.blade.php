@@ -11,7 +11,7 @@
     <meta name="author" content="" />
     <link rel="icon" href="{{ url('vendor/site-editor/img/logo.jpg') }}" />
     <base href="" />
-    <title>{{ config('app.name') .' | '. ucfirst(trans($bname)) }}</title>
+    <title>{{ config('app.name') .' | '. ucfirst(trans($business)) }}</title>
 
     <link href="{{ url('vendor/site-editor/css/editor.css') }}" rel="stylesheet" />
 </head>
@@ -78,7 +78,7 @@
 
             <div class="btn-group me-3 float-end" role="group">
                 <button class="btn btn-primary btn-icon" title="Export (Ctrl + E)" id="save-btn"
-                    data-vvveb-action="saveAjax" data-vvveb-url="/editor/save/{{ $bname }}"
+                    data-vvveb-action="saveAjax" data-vvveb-url="/pcx/editor/save/{{ $business }}"
                     data-v-vvveb-shortcut="ctrl+e">
                     <i class="la la-save"></i> <span data-v-gettext>Save page</span>
                 </button>
@@ -1520,10 +1520,10 @@
     <script>
         window.mediaPath = "/vendor/kavi/site-editor/src/assets/media";
 		//Vvveb.themeBaseUrl = 'demo/landing/';
-        Vvveb.business = '{{ $bname }}';
-        Vvveb.upload = '/editor/upload/' + Vvveb.business;
+        Vvveb.business = '{{ $business }}';
+        Vvveb.upload = '/pcx/editor/upload/' + Vvveb.business;
 		Vvveb.mediaPath = '/storage/site-editor/' + Vvveb.business;
-		Vvveb.scanPath = '/editor/public/scan/' + Vvveb.business;
+		Vvveb.scanPath = '/pcx/editor/public/scan/' + Vvveb.business;
     </script>
     <script src="{{ url('vendor/site-editor/libs/media/media.js') }}"></script>
     <script src="{{ url('vendor/site-editor/libs/media/openverse.js') }}"></script>
@@ -1574,7 +1574,7 @@
 				$(".component-properties-tab").hide();
 			}
 
-			Vvveb.Builder.init("/{{ $bname }}", function () {
+			Vvveb.Builder.init("/{{ $business }}", function () {
 				//run code after page/iframe is loaded
 			});
 

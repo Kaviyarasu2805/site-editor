@@ -31,6 +31,6 @@ class SiteEditorServiceProvider extends ServiceProvider
             __DIR__ . '/assets' => public_path('vendor/site-editor'),
         ], 'public');
         
-        Route::prefix('editor')->group(__DIR__.'/routes/editor.php');
+        Route::prefix('pcx/editor')->group(__DIR__.'/routes/editor.php');
     }
 }
