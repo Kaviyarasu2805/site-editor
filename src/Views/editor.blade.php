@@ -1522,7 +1522,7 @@
 		//Vvveb.themeBaseUrl = 'demo/landing/';
         Vvveb.business = '{{ $bname }}';
         Vvveb.upload = '/editor/upload/' + Vvveb.business;
-		Vvveb.mediaPath = '/assets/images/site-editor/' + Vvveb.business;
+		Vvveb.mediaPath = '/storage/site-editor/' + Vvveb.business;
 		Vvveb.scanPath = '/editor/public/scan/' + Vvveb.business;
     </script>
     <script src="{{ url('vendor/site-editor/libs/media/media.js') }}"></script>
