@@ -4,6 +4,8 @@ namespace Kavi\SiteEditor\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\SiteEditor;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
@@ -30,15 +32,15 @@ class SiteEditorController extends Controller
             return response()->json(['error' => $validator->errors()->all()]);
         }
 
-        $file = time() . '.' . $request->file->extension();
-        $request->file->move(public_path('vendor/site-editor/') . $business, $file);
+        $fileName = time() . rand() . '.' . $request->file->extension();
+        $request->file->storeAs("site-editor/" . $business, $fileName, 'public');
 
-        return $file;
+        return $fileName;
     }
 
     public function scan(Request $request, $business)
     {
-        $mediaPath = $request->input('mediaPath', public_path('vendor/site-editor/' . $business));
+        $mediaPath = $request->input('mediaPath', public_path('storage/site-editor/' . $business));
 
         $response = $this->scanDirectory($mediaPath);
 
@@ -61,7 +63,7 @@ class SiteEditorController extends Controller
             $files[] = [
                 'name'  => basename($directory),
                 'type'  => 'folder',
-                'path'  => str_replace(public_path(), '/public', $directory),
+                'path'  => str_replace(public_path(), '', $directory),
                 'items' => $this->scanDirectory($directory),
             ];
         }
@@ -70,7 +72,7 @@ class SiteEditorController extends Controller
             $files[] = [
                 'name' => $file->getFilename(),
                 'type' => 'file',
-                'path' => str_replace(public_path(), '/public', $file->getPathname()),
+                'path' => str_replace(public_path(), '', $file->getPathname()),
                 'size' => $file->getSize(),
             ];
         }
@@ -80,14 +82,16 @@ class SiteEditorController extends Controller
 
     public function save(Request $request, $business)
     {
-        $buss = DB::table("business")->where("bname", $business)->first();
+        $html = $this->sanitizeFileName($request->input('html'));
 
-        $file = $this->sanitizeFileName($request->input('html'));
-
-        $data = array(
-            'manual_editor_content' => $file
+        SiteEditor::updateOrCreate(
+            ['user_id' => auth()->id()],
+            [
+                'user_id' => auth()->id(),
+                'content' => $html
+            ]
         );
-        DB::table("business_content")->where('bid', $buss->id)->update($data);
+
         return "File saved <a href='/$business' target='_blank'>$business</a> ;)";
     }
 
